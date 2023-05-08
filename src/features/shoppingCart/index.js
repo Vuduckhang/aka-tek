@@ -9,12 +9,10 @@ const ShoppingCart = () => {
   return (
     <div className='home-background flex'>
       <Header />
-      <div>
-        <ItemCard title={'Shopping Cart'}>
-          <ShoppingCartItems />
-          <ShoppingCartTotal />
-        </ItemCard>
-      </div>
+      <ItemCard title={'Shopping Cart'}>
+        <ShoppingCartItems />
+        <ShoppingCartTotal />
+      </ItemCard>
       <Footer />
     </div>
   )

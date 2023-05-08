@@ -2,7 +2,7 @@ import React from 'react'
 
 const ShoppingItem = ({ item }) => {
   return (
-    <div className='d-flex bd-highlight'>
+    <div className='d-flex'>
       <div class='p-2'>
         <img src={item.image} />
       </div>
@@ -65,13 +65,13 @@ const ShoppingCartItems = () => {
   ]
   return (
     <div className='shopping-cart-item w-100'>
-      <div className='d-flex bd-highlight shopping-cart-item__title-text shopping-cart-item__item-price'>
-        <div class='p-2 w-100 bd-highlight'>Items</div>
+      <div className='d-flex shopping-cart-item__title-text shopping-cart-item__item-price'>
+        <div class='p-2 w-100'>Items</div>
         <div class='p-2 pr-5'>Price</div>
       </div>
 
       <div className='professional-border-bottom'>
-        <div class='p-2 w-100 bd-highlight shopping-cart-item__title-text'>
+        <div class='p-2 w-100 shopping-cart-item__title-text'>
           Professional Development Videos{' '}
         </div>
         {data.map((item) => {
@@ -79,9 +79,7 @@ const ShoppingCartItems = () => {
         })}
       </div>
 
-      <div class='p-2 w-100 bd-highlight shopping-cart-item__title-text'>
-        Textbooks
-      </div>
+      <div class='p-2 w-100 shopping-cart-item__title-text'>Textbooks</div>
       {textbooks.map((item) => {
         return <ShoppingItem item={item} />
       })}

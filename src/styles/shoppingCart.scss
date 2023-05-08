@@ -3,8 +3,8 @@
  }
 
 .shopping-cart-item {
-  padding-left: 5,25rem;
-  padding-right: 1,875rem;
+  padding-left: 5.25rem;
+  padding-right: 1.875rem;
 
   &__title-text {
     font-family: 'Poppins';
@@ -62,7 +62,7 @@
 
 .shopping-total {
   &__title{
-    width: 100%;
+    width: 200px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -81,6 +81,7 @@
 
   &__apply-code {
     height: 44px;
+    width: 10rem;
     border-radius: 5px;
     color: #FFFFFF;
     background: #229BE8;

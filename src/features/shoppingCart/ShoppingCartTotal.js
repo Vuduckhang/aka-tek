@@ -1,5 +1,6 @@
 import { Button, Input } from 'antd'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 const ShoppingCartTotal = () => {
   const data = {
@@ -7,7 +8,8 @@ const ShoppingCartTotal = () => {
   }
   const [promotionCode, setPromotionCode] = useState('')
   const [discount, setDiscount] = useState(0)
-  const [grandTotal, setGrandTotal] = useState(data.subtotal)
+  const [grandTotal, setGrandTotal] = useState(data?.subtotal)
+  const navigate = useNavigate()
 
   const onApplyCode = () => {
     console.log('Promotion Code : ', promotionCode)
@@ -18,7 +20,20 @@ const ShoppingCartTotal = () => {
   }
 
   const onCheckout = () => {
-    console.log('onCheckout : ')
+    console.log('onCheckout : /check-out')
+    navigate('/check-out', {
+      state: {
+        subtotal: data.subtotal,
+        discount: discount,
+        grandTotal: grandTotal,
+        promotionCode,
+        item: [
+          { name: 'PD Videos - Grade 1', price: 100.0 },
+          { name: 'Textbook 1', price: 100.0 },
+          { name: 'Textbook 2', price: 100.0 },
+        ],
+      },
+    })
   }
 
   return (
@@ -29,23 +44,25 @@ const ShoppingCartTotal = () => {
       </div>
 
       <div className='d-flex ml-3 my-3'>
-        <div class='p-2 mx-5 shopping-total__title'>Apply Promotion code</div>
-        <Input
-          className='p-3 shopping-total__promotion-code'
-          placeholder='Promotion code'
-          value={promotionCode}
-          onChange={(input) => {
-            setPromotionCode(input.target.value)
-          }}
-        />
-        <Button
-          type='primary'
-          className='shopping-total__apply-code mx-5 w-100'
-          onClick={onApplyCode}
-        >
-          Apply Code
-        </Button>
-        <div class='p-2 pr-5 bd-highlight'>Discount</div>
+        <div class='w-100 d-flex'>
+          <div class='p-2 mx-5 shopping-total__title'>Apply Promotion code</div>
+          <Input
+            className='p-3 shopping-total__promotion-code'
+            placeholder='Promotion code'
+            value={promotionCode}
+            onChange={(input) => {
+              setPromotionCode(input.target.value)
+            }}
+          />
+          <Button
+            type='primary'
+            className='shopping-total__apply-code mx-5 '
+            onClick={onApplyCode}
+          >
+            Apply Code
+          </Button>
+        </div>
+        <div class='p-2 mr-3 pr-5 bd-highlight'>Discount</div>
         <div class='p-2 pr-5 mr-2'>{discount ? `-$${discount}` : `$0`}</div>
       </div>
 
