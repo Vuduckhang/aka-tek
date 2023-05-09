@@ -23,9 +23,9 @@ const ShoppingCartTotal = () => {
     console.log('onCheckout : /check-out')
     navigate('/check-out', {
       state: {
-        subtotal: data.subtotal,
-        discount: discount,
-        grandTotal: grandTotal,
+        subtotal: data.subtotal || 0,
+        discount: discount || 0,
+        grandTotal: grandTotal || 0,
         promotionCode,
         item: [
           { name: 'PD Videos - Grade 1', price: 100.0 },

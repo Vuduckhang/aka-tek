@@ -3,7 +3,7 @@ import React from 'react'
 const ItemCard = (props) => {
   const { title, children } = props
   return (
-    <div className='item-card'>
+    <div className='item-card pb-4'>
       <div className='form-title'>
         {title}
         <div />

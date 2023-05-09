@@ -70,7 +70,7 @@ const ShoppingCartItems = () => {
         <div class='p-2 pr-5'>Price</div>
       </div>
 
-      <div className='professional-border-bottom'>
+      <div className='border-bottom pb-4'>
         <div class='p-2 w-100 shopping-cart-item__title-text'>
           Professional Development Videos{' '}
         </div>

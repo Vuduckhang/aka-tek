@@ -1,0 +1,109 @@
+.order-details {
+  &__promotion-code{
+    height: 2.8rem;
+    background: #F2F2F2;
+    border-radius: 5px;
+  }
+
+  &__apply-code{
+    height: 2.8rem;
+  }
+
+  &__item{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    min-width: 110px;
+  }
+
+  &__title{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+  }
+
+  &__item-name{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__item-price{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &__total{
+    font-weight: 700;
+  }
+
+  &__button{
+    background: #229BE8;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &__place-order{
+    width: 100%;
+    height: 3.75rem;
+  }
+
+  &__accept-Terms{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+.billing-detail {
+  &__input {
+    background: #F2F2F2;
+    border-radius: 5px;
+    height: 43px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  &__title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+:where(.css-dev-only-do-not-override-htwhyh).ant-picker {
+  background: #F2F2F2;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.gray-1-color{
+  color: #333333;
+}
+
+.gray-3-color{
+  color: #828282;
+}
+
+.border-right {
+  border-right: 1px solid #EAEDF8;
+}
