@@ -4,7 +4,7 @@ import Header from '../../components/Header'
 import { Button } from 'antd'
 import { useNavigate } from 'react-router'
 
-const ThankYouIcon = require('../../img/Group.jpg')
+const ThankYouIcon = require('../../img/Frame.png')
 
 const ThankYou = () => {
   const navigate = useNavigate()

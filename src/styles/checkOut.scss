@@ -94,6 +94,7 @@
   background: #F2F2F2;
   border-radius: 5px;
   width: 100%;
+  height: 43px;
 }
 
 .gray-1-color{
@@ -106,4 +107,97 @@
 
 .border-right {
   border-right: 1px solid #EAEDF8;
+}
+
+.check-out {
+  &__triangle-icon {
+    position: absolute;
+    top: 9.2rem;
+    left: 84%;
+    z-index: 1;
+    width: 114px;
+    height:auto;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__dot-icon {
+    position: absolute;
+    width: 9.6rem;
+    height: auto;
+    top: 1rem;
+    left: 37%;
+    z-index: -1;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__circle-icon {
+    position: absolute;
+    top: 18rem;
+    left: -3rem;
+    width: 6.4rem;
+    height: auto;
+    z-index: 1;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__triangle-icon-2 {
+    position: absolute;
+    margin-top: -3rem;
+    left: 1.5rem;
+    z-index: 1;
+    width: 114px;
+    height:auto;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__dot-icon-2 {
+    position: absolute;
+    width: 9.6rem;
+    height: auto;
+    left: 49%;
+    margin-top: -12rem;
+    z-index: 1;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__dot-icon-3 {
+    position: absolute;
+    width: 9rem;
+    height: auto;
+    left: 93%;
+    margin-top: -26rem;
+    z-index: 1;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__circle-icon-2 {
+    position: absolute;
+    left: 84%;
+    margin-top: -5rem;
+    width: 6.4rem;
+    height: auto;
+    z-index: 1;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
