@@ -2,27 +2,33 @@ import { Button, Form, Input, Space } from 'antd'
 import React, { useState } from 'react'
 
 const OrderDetails = ({ values }) => {
-  const { discount, grandTotal, item, promotionCode, subtotal } = values
+  // const { discount, grandTotal, item, promotionCode, subtotal } = values
 
-  const [code, setPromotionCode] = useState(promotionCode)
+  const [code, setPromotionCode] = useState(values?.promotionCode)
+
+  const item = values?.item || []
 
   return (
     <div className='order-details'>
       <div className='border-bottom d-flex gray-1-color pb-4'>
         <div class='w-100 order-details__title '>Order Details</div>
-        <div class='pr-5 order-details__item'>{item?.length} items</div>
+        <div class='pr-5 order-details__item'>{item.length} items</div>
       </div>
 
-      <div class='border-bottom gray-1-color pb-2'>
-        {item.map((value) => {
-          return (
-            <div class='d-flex py-3'>
-              <div class='w-100 order-details__item-name'>{value.name}</div>
-              <div class='pr-5 order-details__item-price'>${value.price}</div>
-            </div>
-          )
-        })}
-      </div>
+      {item.length ? (
+        <div class='border-bottom gray-1-color pb-2'>
+          {item.map((value) => {
+            return (
+              <div class='d-flex py-3'>
+                <div class='w-100 order-details__item-name'>{value?.name}</div>
+                <div class='pr-5 order-details__item-price'>
+                  ${value?.price}
+                </div>
+              </div>
+            )
+          })}{' '}
+        </div>
+      ) : null}
 
       <div class='border-bottom'>
         <div class='gray-1-color order-details__item-name py-3'>
@@ -48,14 +54,14 @@ const OrderDetails = ({ values }) => {
         <div className='d-flex pb-2 pt-3'>
           <div class='w-100 gray-3-color'>Subtotal</div>
           <div class='pr-5 gray-1-color order-details__item-price'>
-            ${subtotal}
+            ${values?.subtotal || 0}
           </div>
         </div>
 
         <div className='d-flex pt-2 pb-3'>
           <div class='w-100 gray-3-color'>Discount</div>
           <div class='pr-5 gray-1-color order-details__item-price'>
-            ${discount}
+            ${values?.discount || 0}
           </div>
         </div>
       </div>
@@ -64,7 +70,9 @@ const OrderDetails = ({ values }) => {
         <div class='w-100 order-details__item-name order-details__total'>
           TOTAL
         </div>
-        <div class='pr-5 order-details__item-price'>${grandTotal}</div>
+        <div class='pr-5 order-details__item-price'>
+          ${values?.grandTotal || 0}
+        </div>
       </div>
 
       <div class='my-3'>
