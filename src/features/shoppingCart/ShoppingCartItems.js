@@ -1,4 +1,5 @@
 import React from 'react'
+import { CloseIcon } from '../../constants/common-constants'
 
 const ShoppingItem = ({ item }) => {
   return (
@@ -21,7 +22,9 @@ const ShoppingItem = ({ item }) => {
       </div>
       <div class='d-flex bd-highligh'>
         <div class='p-2'>${item.price}</div>
-        <div class='p-2'>Icon</div>
+        <div class='p-2 close-icon'>
+          <img src={CloseIcon} />
+        </div>
       </div>
     </div>
   )

@@ -2,8 +2,6 @@ import { Button, Form, Input, Space } from 'antd'
 import React, { useState } from 'react'
 
 const OrderDetails = ({ values }) => {
-  // const { discount, grandTotal, item, promotionCode, subtotal } = values
-
   const [code, setPromotionCode] = useState(values?.promotionCode)
 
   const item = values?.item || []

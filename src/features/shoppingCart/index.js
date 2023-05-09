@@ -40,6 +40,9 @@ const ShoppingCart = () => {
       <div class='shopping-cart__plaid-icon-2'>
         <img src={PlaidIcon} />
       </div>
+      <div class='shopping-cart__plaid-icon-3'>
+        <img src={PlaidIcon} />
+      </div>
       <Footer />
     </div>
   )

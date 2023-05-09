@@ -3,9 +3,6 @@ import React from 'react'
 import FormItem from '../../components/FormItem'
 
 const Payment = () => {
-  const handleChange = (value) => {
-    console.log(`selected ${value}`)
-  }
   return (
     <div>
       <div class='w-100 order-details__title gray-1-color pb-4'>Payment</div>
