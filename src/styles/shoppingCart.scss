@@ -1,5 +1,7 @@
 .home-background {
   background-color: rgba(34, 155, 232, 0.2);
+  position: relative;
+  overflow: hidden;
  }
 
 .shopping-cart-item {
@@ -101,6 +103,10 @@
 }
 
 .shopping-cart {
+  img {
+    width: 100%;
+    height: 100%;
+  }
   &__triangle-icon {
     position: absolute;
     top: 11rem;
@@ -108,6 +114,7 @@
     z-index: 1;
     width: 114px;
     height:auto;
+    overflow: hidden;
     img {
       width: 100%;
       height: 100%;
@@ -128,12 +135,12 @@
   }
 
   &__dot-icon {
-    position: absolute;
+    position:absolute;
     width: 9.6rem;
     height: auto;
     top: 13rem;
     left: 96%;
-    z-index: 1;
+    z-index: -1;
     img {
       width: 100%;
       height: 100%;
@@ -199,4 +206,9 @@
   }
 }
 
+.body-card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
