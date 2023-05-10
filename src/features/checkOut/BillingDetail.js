@@ -10,7 +10,13 @@ const BillingDetail = () => {
       <div class='row'>
         <FormItem
           className='mb-4 col-6'
-          rules={[{ required: true, message: 'Please input first name!' }]}
+          rules={[
+            { required: true, message: 'Please input first name!' },
+            {
+              pattern: new RegExp('([a-zA-Z]{3,30}\\s*)+'),
+              message: 'Format is wrong',
+            },
+          ]}
           name={'firstName'}
           titleClass={'billing-detail__title pb-1'}
           title={'First Name'}
@@ -19,7 +25,13 @@ const BillingDetail = () => {
         />
         <FormItem
           className='mb-4 col-6'
-          rules={[{ required: true, message: 'Please input last name!' }]}
+          rules={[
+            { required: true, message: 'Please input last name!' },
+            {
+              pattern: new RegExp('([a-zA-Z]{3,30}\\s*)+'),
+              message: 'Last name is wrong format',
+            },
+          ]}
           name={'lastName'}
           titleClass={'billing-detail__title pb-1'}
           title={'Last Name'}
@@ -27,11 +39,16 @@ const BillingDetail = () => {
           inputPlaceholder={'Input your last name...'}
         />
       </div>
-
       <div class='row'>
         <FormItem
           className='mb-4 col-6'
-          rules={[{ required: true, message: 'Please input email!' }]}
+          rules={[
+            { required: true, message: 'Please input email!' },
+            {
+              pattern: new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}'),
+              message: 'Email is wrong format',
+            },
+          ]}
           name={'email'}
           titleClass={'billing-detail__title pb-1'}
           title={'Email'}
@@ -40,7 +57,13 @@ const BillingDetail = () => {
         />
         <FormItem
           className='mb-4 col-6'
-          rules={[{ required: true, message: 'Please input phone number!' }]}
+          rules={[
+            { required: true, message: 'Please input phone number!' },
+            {
+              pattern: new RegExp('^[0-9]{10,12}$'),
+              message: 'Phone number is number ,10 < length < 12',
+            },
+          ]}
           name={'phone'}
           titleClass={'billing-detail__title pb-1'}
           title={'Phone'}
