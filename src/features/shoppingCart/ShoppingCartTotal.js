@@ -15,8 +15,10 @@ const ShoppingCartTotal = () => {
     console.log('Promotion Code : ', promotionCode)
     const discount = (data.subtotal * 6) / 100
     const grandTotal = data.subtotal - discount
-    setDiscount(discount)
-    setGrandTotal(grandTotal)
+    if (promotionCode) {
+      setDiscount(discount)
+      setGrandTotal(grandTotal)
+    }
   }
 
   const onCheckout = () => {

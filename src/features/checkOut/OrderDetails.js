@@ -2,9 +2,21 @@ import { Button, Form, Input, Space } from 'antd'
 import React, { useState } from 'react'
 
 const OrderDetails = ({ values }) => {
-  const [code, setPromotionCode] = useState(values?.promotionCode)
+  const [code, setPromotionCode] = useState()
+  const [discount, setDiscount] = useState(values?.discount)
+  const [grandTotal, setGrandTotal] = useState(values?.subtotal || 0)
 
   const item = values?.item || []
+
+  const onApplyCode = () => {
+    console.log('Promotion Code : ', code)
+    const discount = (values?.subtotal * 6) / 100
+    const grandTotal = values?.subtotal - discount
+    if (code) {
+      setDiscount(discount)
+      setGrandTotal(grandTotal)
+    }
+  }
 
   return (
     <div className='order-details'>
@@ -39,7 +51,7 @@ const OrderDetails = ({ values }) => {
           <Input
             className='order-details__promotion-code'
             defaultValue='Input code'
-            value={code}
+            value={code || values?.promotionCode}
             onChange={(input) => {
               setPromotionCode(input.target.value)
             }}
@@ -47,6 +59,7 @@ const OrderDetails = ({ values }) => {
           <Button
             className='order-details__button order-details__apply-code'
             type='primary'
+            onClick={onApplyCode}
           >
             Apply Code
           </Button>
@@ -62,7 +75,7 @@ const OrderDetails = ({ values }) => {
         <div className='d-flex pt-2 pb-3'>
           <div class='w-100 gray-3-color'>Discount</div>
           <div class='pr-5 gray-1-color order-details__item-price'>
-            ${values?.discount || 0}
+            ${discount}
           </div>
         </div>
       </div>
@@ -71,9 +84,7 @@ const OrderDetails = ({ values }) => {
         <div class='w-100 order-details__item-name order-details__total'>
           TOTAL
         </div>
-        <div class='pr-5 order-details__item-price'>
-          ${values?.grandTotal || 0}
-        </div>
+        <div class='pr-5 order-details__item-price'>${grandTotal}</div>
       </div>
 
       <div class='my-3'>
