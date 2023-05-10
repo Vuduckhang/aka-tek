@@ -15,6 +15,9 @@
     font-weight: 700;
     font-size: 40px;
     line-height: 60px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 20px;
+    }
   }
 
   &__text {
@@ -24,6 +27,9 @@
     font-size: 25px;
     line-height: 52px;
     color: #000000;
+    @media screen and (max-device-width: 769px) {
+      font-size: 20px;
+    }
   }
 
   &__button {
@@ -31,5 +37,8 @@
     line-height: 45px;
     width: 25rem;
     height: 4.8rem;
+    @media screen and (max-device-width: 769px) {
+      font-size: 24px;
+    }
   }
 }

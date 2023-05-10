@@ -23,6 +23,11 @@
   padding-left: 5.25rem;
   padding-right: 1.875rem;
 
+  @media screen and (max-device-width: 769px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   &__title-text {
     font-family: 'Poppins';
     font-style: normal;
@@ -140,7 +145,7 @@
     }
    }
 
-  &____check-out {
+  &__check-out {
     width: 13rem;
     height: 3rem;
     line-height: 30px !important;

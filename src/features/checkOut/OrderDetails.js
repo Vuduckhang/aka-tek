@@ -32,7 +32,10 @@ const OrderDetails = ({ values }) => {
         <div class='gray-1-color order-details__item-name py-3'>
           Add Promotion Code
         </div>
-        <Space.Compact style={{ width: '80%' }}>
+        <Space.Compact
+          className='order-details__promotion'
+          style={{ width: '80%' }}
+        >
           <Input
             className='order-details__promotion-code'
             defaultValue='Input code'

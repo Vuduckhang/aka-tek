@@ -4,9 +4,18 @@
     background: #F2F2F2;
     border-radius: 5px;
   }
+  
+  @media screen and (max-device-width: 769px) {
+    &__promotion{
+      width: 100% !important;
+    }
+  }
 
   &__apply-code{
     height: 2.8rem;
+    @media screen and (max-device-width: 769px) {
+      font-size: 14px !important;
+    }
   }
 
   &__item{
@@ -16,6 +25,11 @@
     font-size: 20px;
     line-height: 20px;
     min-width: 110px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 16px !important;
+      min-width: 50px;
+      padding-right: 0px !important;
+    }
   }
 
   &__title{
@@ -24,6 +38,9 @@
     font-weight: 700;
     font-size: 30px;
     line-height: 24px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 18px !important;
+    }
   }
 
   &__item-name{
@@ -32,6 +49,9 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 18px !important;
+    }
   }
 
   &__item-price{
@@ -40,6 +60,9 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 18px !important;
+    }
   }
 
   &__total{
@@ -67,6 +90,9 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 16px ;
+    }
   }
 }
 
@@ -80,6 +106,9 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 18px !important;
+    }
   }
   &__title{
     font-family: 'Roboto';
@@ -87,6 +116,9 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
+    @media screen and (max-device-width: 769px) {
+      font-size: 18px !important;
+    }
   }
 }
 

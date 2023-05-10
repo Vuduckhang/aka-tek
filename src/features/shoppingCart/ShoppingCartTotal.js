@@ -71,10 +71,10 @@ const ShoppingCartTotal = () => {
         <div class='p-2 pr-5 bd-highlight'>GRAND TOTAL</div>
       </div>
 
-      <div className='d-flex flex-row-reverse'>
+      <div className='d-flex flex-row-reverse pt-2'>
         <Button
           type='primary'
-          className='shopping-total__apply-code shopping-total____check-out mx-5 my-4'
+          className='shopping-total__apply-code shopping-total__check-out mx-5 my-4'
           onClick={onCheckout}
         >
           Check out
