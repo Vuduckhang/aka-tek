@@ -13,7 +13,7 @@ import { DotIcon } from '../../constants/common-constants'
 
 const ShoppingCart = () => {
   return (
-    <div className='home-background flex'>
+    <div className='home-background home-background__shopping-cart'>
       <Header />
       <div class='shopping-cart__triangle-icon'>
         <img src={TriangleIcon} />

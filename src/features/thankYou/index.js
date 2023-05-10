@@ -9,7 +9,7 @@ const ThankYouIcon = require('../../img/Frame.png')
 const ThankYou = () => {
   const navigate = useNavigate()
   return (
-    <div className='flex'>
+    <div className='home-thank-you'>
       <Header />
       <div class='thank-you d-flex justify-content-center'>
         <div class='text-center'>

@@ -4,7 +4,7 @@ import { CloseIcon } from '../../constants/common-constants'
 const ShoppingItem = ({ item }) => {
   return (
     <div className='d-flex'>
-      <div class='p-2'>
+      <div class='p-2 shopping-cart-item__image'>
         <img src={item.image} />
       </div>
       <div class='p-4 w-100'>

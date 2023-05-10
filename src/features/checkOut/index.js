@@ -22,7 +22,7 @@ const CheckOut = () => {
   }
 
   return (
-    <div className='home-background flex'>
+    <div className='home-background home-background__check-out'>
       <Header />
       <div class='check-out__triangle-icon'>
         <img src={TriangleIcon} />
