@@ -93,8 +93,8 @@ const ShoppingCartItems = ({ isMobile }) => {
   return (
     <div className='shopping-cart-item w-100'>
       <div className='row py-2 shopping-cart-item__title-text shopping-cart-item__item-price'>
-        <div class='col-10'>Items</div>
-        <div class='col-2 pl-0'>Price</div>
+        <div class='col-10 pr-0'>Items</div>
+        <div class='col-2 px-0'>Price</div>
       </div>
 
       <div className='border-bottom pb-4'>

@@ -37,35 +37,36 @@ const ShoppingCartTotal = ({ isMobile }) => {
       },
     })
   }
-
+  console.log('promotionCode......', promotionCode, !!promotionCode)
   return (
     <div className='pb-2 shopping-total'>
       <div className='row m-2 ml-0 background-grey justify-content-end '>
         <div class='col-2 py-2 d-flex justify-content-end'>Subtotal</div>
-        <div class={`${isMobile ? 'col-3' : 'col-2'} py-2`}>
+        <div class={`${isMobile ? 'col-3 px-0' : 'col-2'} py-2`}>
           ${data.subtotal}
         </div>
       </div>
 
       {isMobile ? (
         <>
-          <div class='row m-2'>
-            <div class='col-4 shopping-total__title'>Apply Promotion code</div>
-            <div class='col-8 pr-0'>
-              <Input
-                className='shopping-total__promotion-code w-100'
-                placeholder='Promotion code'
-                value={promotionCode}
-                onChange={(input) => {
-                  setPromotionCode(input.target.value)
-                }}
-              />
-            </div>
+          <div class='shopping-total__title p-2 w-100'>
+            Apply Promotion code
           </div>
-          <div class='d-flex justify-content-end m-2'>
+          <div class='p-2'>
+            <Input
+              className='shopping-total__promotion-code w-100'
+              placeholder='Promotion code'
+              value={promotionCode}
+              onChange={(input) => {
+                setPromotionCode(input.target.value)
+              }}
+            />
+          </div>
+          <div class='d-flex justify-content-start w-100 pr-2'>
             <Button
               type='primary'
-              className='shopping-total__apply-code'
+              disabled={!promotionCode}
+              className='shopping-total__apply-code ml-0 w-100'
               onClick={onApplyCode}
             >
               Apply Code
@@ -73,7 +74,7 @@ const ShoppingCartTotal = ({ isMobile }) => {
           </div>
           <div class='row justify-content-end'>
             <div class='py-2 col-2 d-flex justify-content-end'>Discount</div>
-            <div class={`${isMobile ? 'col-3' : 'col-2'} py-2 p-2 pr-5 mr-2`}>
+            <div class='col-3 px-0 py-2 p-2 pr-5 mr-2'>
               {discount ? `-$${discount}` : `$0`}
             </div>
           </div>
@@ -95,6 +96,7 @@ const ShoppingCartTotal = ({ isMobile }) => {
                 type='primary'
                 className='w-100 shopping-total__apply-code'
                 onClick={onApplyCode}
+                disabled={!promotionCode}
               >
                 Apply Code
               </Button>
@@ -107,7 +109,9 @@ const ShoppingCartTotal = ({ isMobile }) => {
 
       <div className='row m-2 background-grey justify-content-end'>
         <div class='col-2 py-2 d-flex justify-content-end'>GRAND TOTAL</div>
-        <div class={`${isMobile ? 'col-3' : 'col-2'} py-2`}>${grandTotal}</div>
+        <div class={`${isMobile ? 'col-3 px-0' : 'col-2'} py-2`}>
+          ${grandTotal}
+        </div>
       </div>
 
       <div className='d-flex justify-content-end pt-2 mr-2'>
