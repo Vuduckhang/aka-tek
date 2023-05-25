@@ -11,7 +11,7 @@ import {
 } from '../../constants/common-constants'
 import { DotIcon } from '../../constants/common-constants'
 
-const ShoppingCart = () => {
+const ShoppingCart = (props) => {
   return (
     <div className='home-background home-background__shopping-cart'>
       <Header />
@@ -34,8 +34,8 @@ const ShoppingCart = () => {
         <img src={TriangleIcon} />
       </div>
       <ItemCard title={'Shopping Cart'}>
-        <ShoppingCartItems />
-        <ShoppingCartTotal />
+        <ShoppingCartItems isMobile={props.isMobile} />
+        <ShoppingCartTotal isMobile={props.isMobile} />
       </ItemCard>
       <div class='shopping-cart__plaid-icon-2'>
         <img src={PlaidIcon} />

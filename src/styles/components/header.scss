@@ -2,6 +2,9 @@
   height: 5rem;
   background: #FFFFFF;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+  @media screen and (max-device-width: 415px) {
+    height: 3rem;
+  }
 }
 
 .form-footer {
@@ -9,11 +12,14 @@
   height: 432px;
   margin-left: -5%;
   overflow: hidden;
+  @media screen and (max-device-width: 415px) {
+    height: 150px;
+  }
 }
 
 .form-body {
   height: 100%;
   width: 105%;
   background: #133788;
-	border-radius: 50% 50%  0 0;
+  border-radius: 50% 50% 0 0;
 }

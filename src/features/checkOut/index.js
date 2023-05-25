@@ -13,7 +13,7 @@ import {
   TriangleIcon,
 } from '../../constants/common-constants'
 
-const CheckOut = () => {
+const CheckOut = (props) => {
   const { state } = useLocation()
   const navigate = useNavigate()
   const [form] = Form.useForm()
@@ -35,15 +35,23 @@ const CheckOut = () => {
       </div>
       <ItemCard title={'Check out'}>
         <Form form={form} onFinish={onFinish}>
-          <div class='row align-items-start'>
-            <div class='col-8 border-right'>
+          {props.isMobile ? (
+            <div>
               <BillingDetail />
               <Payment />
-            </div>
-            <div class='col-4'>
               <OrderDetails values={state} />
             </div>
-          </div>
+          ) : (
+            <div class='row align-items-start'>
+              <div class='col-8 border-right'>
+                <BillingDetail />
+                <Payment />
+              </div>
+              <div class='col-4'>
+                <OrderDetails values={state} />
+              </div>
+            </div>
+          )}
         </Form>
       </ItemCard>
       <div class='check-out__triangle-icon-2'>

@@ -1,28 +1,52 @@
 import React from 'react'
 import { CloseIcon } from '../../constants/common-constants'
 
-const ShoppingItem = ({ item }) => {
+const ShoppingItem = ({ item, isMobile }) => {
   return (
-    <div className='d-flex'>
-      <div class='p-2 shopping-cart-item__image'>
-        <img src={item.image} />
-      </div>
-      <div class='p-4 w-100'>
-        <div className='shopping-cart-item__title'>{item.title}</div>
-        <div className='shopping-cart-item__text font-size-18'>
-          {item.series ? <div>Series: {item.series}</div> : null}
-          {item.subject ? <div>Subject: {item.subject}</div> : null}
-          {item.name ? <div>{item.name}</div> : null}
-        </div>
-        {item.content ? (
-          <div className='shopping-cart-item__text shopping-cart-item__content font-size-16 line-height-19 '>
-            {item.content}
+    <div className='row py-2'>
+      {isMobile ? (
+        <div className='col-9 pr-2'>
+          <div class='shopping-cart-item__image w-100'>
+            <img src={item.image} />
           </div>
-        ) : null}
-      </div>
-      <div class='d-flex bd-highligh'>
-        <div class='p-2'>${item.price}</div>
-        <div class='p-2 close-icon'>
+          <div class='w-100'>
+            <div className='shopping-cart-item__title'>{item.title}</div>
+            <div className='shopping-cart-item__text font-size-18'>
+              {item.series ? <div>Series: {item.series}</div> : null}
+              {item.subject ? <div>Subject: {item.subject}</div> : null}
+              {item.name ? <div>{item.name}</div> : null}
+            </div>
+            {item.content ? (
+              <div className='shopping-cart-item__text shopping-cart-item__content font-size-16 line-height-19 '>
+                {item.content}
+              </div>
+            ) : null}
+          </div>
+        </div>
+      ) : (
+        <>
+          <div class='p-2 col-3 shopping-cart-item__image'>
+            <img src={item.image} />
+          </div>
+          <div class='p-4 col-7 w-100'>
+            <div className='shopping-cart-item__title'>{item.title}</div>
+            <div className='shopping-cart-item__text font-size-18'>
+              {item.series ? <div>Series: {item.series}</div> : null}
+              {item.subject ? <div>Subject: {item.subject}</div> : null}
+              {item.name ? <div>{item.name}</div> : null}
+            </div>
+            {item.content ? (
+              <div className='shopping-cart-item__text shopping-cart-item__content font-size-16 line-height-19 '>
+                {item.content}
+              </div>
+            ) : null}
+          </div>
+        </>
+      )}
+
+      <div class={`${isMobile ? 'col-3' : 'col-2'} row`}>
+        <div class='col-md-6'>${item.price}</div>
+        <div class='col-md-6 close-icon'>
           <img src={CloseIcon} />
         </div>
       </div>
@@ -30,7 +54,7 @@ const ShoppingItem = ({ item }) => {
   )
 }
 
-const ShoppingCartItems = () => {
+const ShoppingCartItems = ({ isMobile }) => {
   const data = [
     {
       title: 'Grade 1: Video 1',
@@ -68,23 +92,23 @@ const ShoppingCartItems = () => {
   ]
   return (
     <div className='shopping-cart-item w-100'>
-      <div className='d-flex shopping-cart-item__title-text shopping-cart-item__item-price'>
-        <div class='p-2 w-100'>Items</div>
-        <div class='p-2 pr-5'>Price</div>
+      <div className='row py-2 shopping-cart-item__title-text shopping-cart-item__item-price'>
+        <div class='col-10'>Items</div>
+        <div class='col-2 pl-0'>Price</div>
       </div>
 
       <div className='border-bottom pb-4'>
-        <div class='p-2 w-100 shopping-cart-item__title-text'>
+        <div class='py-2 w-75 shopping-cart-item__title-text'>
           Professional Development Videos{' '}
         </div>
         {data.map((item) => {
-          return <ShoppingItem item={item} />
+          return <ShoppingItem item={item} isMobile={isMobile} />
         })}
       </div>
 
-      <div class='p-2 w-100 shopping-cart-item__title-text'>Textbooks</div>
+      <div class='py-2 w-75 shopping-cart-item__title-text'>Textbooks</div>
       {textbooks.map((item) => {
-        return <ShoppingItem item={item} />
+        return <ShoppingItem item={item} isMobile={isMobile} />
       })}
     </div>
   )
