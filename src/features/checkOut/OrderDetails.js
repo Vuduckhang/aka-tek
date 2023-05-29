@@ -9,12 +9,14 @@ const OrderDetails = ({ values }) => {
   const item = values?.item || []
 
   const onApplyCode = () => {
-    console.log('Promotion Code : ', code)
     const discount = (values?.subtotal * 6) / 100
     const grandTotal = values?.subtotal - discount
     if (code) {
       setDiscount(discount)
       setGrandTotal(grandTotal)
+    } else {
+      setDiscount(0)
+      setGrandTotal(values.subtotal)
     }
   }
 

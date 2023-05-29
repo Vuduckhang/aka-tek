@@ -12,17 +12,19 @@ const ShoppingCartTotal = ({ isMobile }) => {
   const navigate = useNavigate()
 
   const onApplyCode = () => {
-    console.log('Promotion Code : ', promotionCode)
     const discount = (data.subtotal * 6) / 100
     const grandTotal = data.subtotal - discount
     if (promotionCode) {
       setDiscount(discount)
       setGrandTotal(grandTotal)
+    } else {
+      setDiscount(0)
+      setGrandTotal(data.subtotal)
     }
+    
   }
 
   const onCheckout = () => {
-    console.log('onCheckout : /check-out')
     navigate('/check-out', {
       state: {
         subtotal: data.subtotal || 0,
@@ -37,7 +39,7 @@ const ShoppingCartTotal = ({ isMobile }) => {
       },
     })
   }
-  console.log('promotionCode......', promotionCode, !!promotionCode)
+
   return (
     <div className='pb-2 shopping-total'>
       <div className='row m-2 ml-0 background-grey justify-content-end '>
@@ -65,7 +67,6 @@ const ShoppingCartTotal = ({ isMobile }) => {
           <div class='d-flex justify-content-start w-100 pr-2'>
             <Button
               type='primary'
-              disabled={!promotionCode}
               className='shopping-total__apply-code ml-0 w-100'
               onClick={onApplyCode}
             >
